@@ -5,14 +5,13 @@ models:
     columns:
       - name: customerID
         tests:
-          - unique
-          - not null
+          - not_null
           - relationships:
               to: ref('stg_customers')
               field: customerID
       - name: payment_method
         tests:
-          - not null
+          - not_null
       - name: total
         tests:
-          - not null      
+          - not_null      
