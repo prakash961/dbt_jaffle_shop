@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: agg1
+    description: This is a basic aggregation for completed customer orders and associated total
+    columns:
+      - name: customerID
+        tests:
+          - unique
+          - not null
+          - relationships:
+              to: ref('stg_customers')
+              field: customerID
+      - name: payment_method
+        tests:
+          - not null
+      - name: total
+        tests:
+          - not null      
